@@ -26,6 +26,16 @@ body {
     background-color: #e4e4ee;
 }
 
+.invert {
+    filter: invert() brightness(100%);
+}
+
+
+.header__user > img,
+.header__greeting > img {
+    border-radius: 50%;
+}
+
 @media only screen and (min-width: 700px) {
     body {
         height: 100vh;
