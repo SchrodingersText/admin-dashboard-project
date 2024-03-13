@@ -14,7 +14,9 @@ html {
 
 body {
     display: grid;
-    grid-template: 1fr 2fr 2fr 4fr;
+    /* grid-template: 1fr 4fr / 1fr 4fr; */
+
+    font-family: sans-serif;
 }
 
 .sidebar {
@@ -26,10 +28,25 @@ body {
     background-color: #e4e4ee;
 }
 
+/* Sidebar styling */
+
+.sidebar {
+    display: grid;
+}
+
+.sidebar a,
+.sidebar__header > h2 {
+    color: white;
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+/* Icon and image styling */
 .invert {
     filter: invert() brightness(100%);
 }
-
 
 .header__user > img,
 .header__greeting > img {
@@ -59,4 +76,46 @@ body {
         grid-column: 3;
         grid-row-start: 2;
     }
+
+    /* Sidebar styling for desktop */
+
+    .sidebar {
+        padding: 30px 30px;
+        grid-template-rows: repeat(3, min-content);  
+        gap: 50px;
+    }
+
+    .sidebar__header {
+        grid-row: 1;
+        
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        font-size: 2.5rem;
+        font-weight: 900;  
+    }
+
+    .sidebar__links-a,
+    .sidebar__links-b {
+        display: grid;
+        grid-template-rows: repeat(auto-fit, min-content);
+        gap: 20px;
+        padding-left: 5px;
+    }
+
+    .sidebar a {
+        font-size: 1.5rem;
+        font-weight: 900;      
+
+        display: flex;
+        align-items: center;
+    }
+
+    .sidebar a > img {
+        width: 60px;
+        padding-right: 30px;
+    }
+
+
 }
