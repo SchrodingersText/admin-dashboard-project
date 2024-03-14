@@ -32,7 +32,8 @@ body {
 }
 
 .sidebar a,
-.sidebar__header > h2 {
+.sidebar__header > h2,
+.header__action-buttons button {
     color: white;
 }
 
@@ -50,7 +51,7 @@ body {
     .extras {
         display: none;
     }
-    
+
     .sidebar {
         grid-row: 1/3;
     
@@ -96,12 +97,38 @@ body {
     }
 }
 
+/* Header styling */
+
+.header {
+    padding: 10px;
+
+    display: grid;
+}
+
+#search {
+    background-color: #e4e4ee;
+    border-radius: 50px;
+}
+
+#search:focus {
+    outline: 2px solid cornflowerblue;
+}
+
+.header__greeting {
+    display: grid;
+}
+
+.header__action-buttons button {
+    background-color: cornflowerblue;
+    font-weight: 600;
+}
+
 /* Icon and image styling */
 .invert {
     filter: invert() brightness(100%);
 }
 
-.header__user > img,
+.header__user img,
 .header__greeting > img {
     border-radius: 50%;
 }
@@ -168,5 +195,86 @@ body {
 
     .sidebar a:hover {
         text-decoration: underline;
+    }
+
+    /* Header styling for desktop */
+
+    .header {
+        padding: 10px 50px 30px 50px;
+
+        grid-template: min-content 1fr / 3fr 1fr;
+    }
+
+    .header__search {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .header__search input {
+        padding: 5px 10px;
+        line-height: 2rem;
+        width: 90%;
+    }
+
+    .header__user {
+        display: grid;
+        grid-template-columns: repeat(2, min-content) max-content;
+        gap: 20px;
+        align-items: center;
+        justify-content: end;
+    }
+
+    .header__notifications {
+        width: min-content;
+        height: min-content;
+        background-color: white;
+    }
+
+    .header__user a {
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+        font-size: 1.5rem;
+        
+    }
+
+    .header__greeting {
+        grid-template-columns: 1fr 1fr/ min-content 1fr;
+        justify-content: left;
+        align-items: end;
+    }
+
+    .header__greeting img {
+        grid-row: 1/3;
+        margin-right: 20px;
+    }
+
+    .header__greeting p {
+        grid-column: 2;
+        
+        margin-top: 40px;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .header__greeting h2 {
+        font-size: 2.5rem;
+        font-weight: 600;  
+        margin-right: 30px;
+    }
+
+    .header__action-buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: end;
+        gap: 30px;
+    }
+
+    .header__action-buttons button {
+        width: 130px;
+        padding: 10px;
+        border-radius: 50px;
+        font-size: 1.3rem;
     }
 }

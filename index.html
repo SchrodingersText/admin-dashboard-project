@@ -69,19 +69,21 @@
 
     <header class="header">
         <div class="header__search">
-            <img src="images/search.svg" alt="a search icon">
-            <input type="search" name="search">
+            <label for="search">
+                <img src="images/search.svg" width="30px" height="30px">
+            </label>
+            <input id="search" type="search" name="search">
         </div>
 
-        <button class="header__notifications"><img src="" alt=""></button>
 
         <div class="header__user">
-            <img src="images/beetle.jpeg" alt="your user photo" width="75px" height="75px">
-            <a href="#">Beetle McGee</a>
+            <button class="header__notifications" type="button"><img src="images/bell.svg" width="30px" height="30px"></button>
+            <a href="#user"><img src="images/beetle.jpeg" alt="your user photo" width="75px" height="75px"></a>
+            <a href="#user">Beetle McGee</a>
         </div>
         
         <div class="header__greeting">
-            <img src="images/beetle.jpeg" alt="your user photo" width="150px" height="150px">
+            <img src="images/beetle.jpeg" alt="your user photo" width="120px" height="120px">
             <p>Hi there,</p>
             <h2>Beetle McGee (@beetle23)</h2>
         </div>
