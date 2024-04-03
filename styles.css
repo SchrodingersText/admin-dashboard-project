@@ -19,7 +19,7 @@ body {
 }
 
 .main, 
-.extras {
+.side-features {
     background-color: #e6e6f0;
 }
 
@@ -46,7 +46,7 @@ body {
 
 .header {
     box-shadow: -1px 10px 5px -5px #c8c8d1;
-    z-index: 1;
+    z-index: 0;
     padding: 10px;
 
     display: grid;
@@ -92,11 +92,10 @@ body {
 .main > p {
     font-size: 1.3rem;
     font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .main__card-container {
-    padding-top: 20px;
-
     display: grid;
     grid-auto-rows: 1fr;
     gap: 30px;
@@ -104,19 +103,18 @@ body {
 
 .card {
     background-color: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     border-left: 10px solid #a1b5da;
     box-shadow: 10px 10px 5px -5px #c8c8d1;
 
     display: grid;
-    grid-template: 1fr 2fr 1fr / 1fr 1fr;
+    grid-template: 1fr 2fr 1fr/ 1fr 1fr;
 }
 
 .card h5 {
     font-size: 1.2rem;
     font-weight: 600;
-    grid-column: 1 span 2;
     width: max-content;
 }
 
@@ -152,7 +150,14 @@ body {
         grid-template: 1fr 1fr 2fr 3fr ;
     }
 
-    .extras {
+    .sidebar,
+    .header,
+    .main,
+    .side-features {
+        width: 100vw;
+    }
+
+    .side-features {
         grid-row: 3;
     }
 
@@ -160,6 +165,7 @@ body {
         padding: 10px;
         position: fixed;
         width: 100vw;
+        z-index: 1;
 
         display: grid;
         grid-template-columns:1fr 1fr 1fr;
@@ -216,7 +222,7 @@ body {
         background-color: cornflowerblue;
     }
 
-    .extras {
+    .side-features {
         display: none;
     }
 
@@ -280,8 +286,14 @@ body {
 }
 
 .header__user img,
-.header__greeting > img {
+.header__greeting > img,
+.side-features__trending img {
     border-radius: 50%;
+}
+
+.side-features__trending img {
+    max-width: 100%;
+    height: auto;
 }
 
 @media only screen and (min-width: 700px) {
@@ -308,7 +320,7 @@ body {
         grid-row-start: 2;
     }
 
-    .extras {
+    .side-features {
         grid-column: 3;
         grid-row-start: 2;
     }
@@ -316,6 +328,7 @@ body {
     /* Sidebar styling for desktop */
 
     .sidebar {
+        
         padding: 30px 30px;
         grid-template-rows: repeat(3, min-content);  
         gap: 50px;
@@ -427,27 +440,105 @@ body {
 
     /* Main styling for desktop */
 
-    main {
-        overflow-y: scroll;
-    }
-
     .main__card-container {
         grid-template-columns: 1fr 1fr;
     }
 
+    /* Side-feature styling for desktop */
+
+    .side-features {
+        padding: 30px 50px 30px 0px;
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+        gap: 30px;
+    }
+
+    .side-features > div > p {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .side-features__announcements,
+    .side-features__trending {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: -1px 10px 5px -5px #c8c8d1;
+
+        display: grid;
+        gap: 10px;
+    }
+
+    .side-features__announcements article {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #c8c8d1;
+    }
+
+    .side-features__announcements article:last-of-type {
+        border: none;
+        padding-bottom: 0px;
+    }
+
+    .side-features__announcements article > a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .side-features__announcements article > a > p:first-of-type {
+        font-weight: 600;
+        padding-bottom: 5px;
+    }
+
+    .side-features__announcements article > a > p:last-of-type {
+        height: fit-content;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    .side-features__trending {
+        grid-template: repeat(4, 1fr);
+    }
+
+    .side-features__trending article {
+        padding-bottom: 10px;
+        
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .side-features__trending article:last-of-type {
+        padding-bottom: 0px;
+    }
+
+    .side-features__trending article a {
+        display: block;
+        color: black;
+        text-decoration: none;
+    }
+
+    .side-features__trending article a:first-of-type {
+        font-weight: 600;
+    }
+
+    /* Scrollbar styling for desktop */
+
     ::-webkit-scrollbar {
         width: 10px;  /*works*/
-        scrollbar-color: white cornflowerblue;  /* everything only works with this on?*/
+        scrollbar-color: white #c8c8d1;  /* everything only works with this on?*/
     }
 
     ::-webkit-scrollbar-track-piece {
         border-radius: 10px;
-        margin: 5px 0;
         background-color: white;  /*works*/
     }
 
     ::-webkit-scrollbar-thumb {
         border-radius: 10px;   /* works*/
-        background-color: cornflowerblue;  /*works*/
+        background-color: #b4b4c7;  /*works*/
     }
 }
