@@ -6,7 +6,6 @@ const showMenu = function () {
    let cssObj = window.getComputedStyle(menuLinks, "display");
    let displayValue = cssObj.getPropertyValue("display");
 
-   console.log(displayValue)
    if (displayValue === "grid") {
     menuLinks.style.display = "none";
 

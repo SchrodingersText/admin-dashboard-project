@@ -221,7 +221,7 @@ button:hover {
 
 @media only screen and (max-width: 700px) {
     body {
-        grid-template: 1fr auto 2fr 3fr ;
+        grid-template: repeat(4, auto);
     }
 
     .sidebar,
@@ -234,7 +234,7 @@ button:hover {
     .sidebar {
         padding: 10px;
         position: fixed;
-        z-index: 1;
+        z-index: 2;
 
         grid-template-columns:1fr 1fr 1fr;
         grid-template-rows: auto auto auto;
@@ -275,7 +275,7 @@ button:hover {
     /* Header styling for mobile */
 
     .header {
-        grid-template: repeat(auto-fit, 1fr) / 1fr 1fr; 
+        grid-template: repeat(1fr, auto-fit) / 1fr 1fr; 
         align-items: center;
         gap: 20px;
         padding-top: 115px;
@@ -326,6 +326,7 @@ button:hover {
 
      .side-features {
         padding: 10px;
+        position: relative;
 
         grid-row: 2;
         grid-template-columns: 1fr 1fr;
@@ -370,26 +371,25 @@ button:hover {
     .expand-button.visible,
     .collapse-button.visible {
         display: block;
-        position: relative;
+        position: absolute;
+        background-color: transparent;
     }
 
-    .expand-button.visible > img {
-        display: block;
-        position: absolute;
-        bottom: 1590px;
-        left: 47vw;
+    .expand-button.visible {
+        top: 80%;
+        left: 47%;
+        z-index: 1;
     }
 
     .expanded {
-        height: 115%;
+        height: 113%;
         overflow: visible;
         box-shadow: -1px 10px 5px -5px #c8c8d1;
     }
 
-    .collapse-button.visible > img {
-        position: absolute;
-        bottom: 1570px;
-        left: 47vw;
+    .collapse-button.visible {
+        top: 90%;
+        left: 47%;
     }
 
     .fade::after {
