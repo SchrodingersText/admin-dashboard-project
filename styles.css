@@ -25,7 +25,7 @@ body,
 .side-features__trending article {
     display: grid;
 
-    font-family: sans-serif;
+    font-family:  sans-serif;
 }
 
 .sidebar,
@@ -535,7 +535,7 @@ button:hover {
     }
 
     .header__action-buttons button {
-        width: 130px;
+        width: 8rem;
         padding: 10px;
         border-radius: 50px;
         font-size: 1.3rem;
